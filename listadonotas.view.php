@@ -21,14 +21,14 @@ $secciones = $secciones->fetchAll();
 ?>
 <html>
 <head>
-    <title>Notas | Registro de Notas</title>
+    <title>Notas | Registro de Conducta</title>
     <meta name="description" content="Registro de Notas del Centro Escolar Profesor Lennin" />
     <link rel="stylesheet" href="css/style.css" />
 
 </head>
 <body>
 <div class="header">
-    <h1>Registro de Notas - Centro Escolar</h1>
+    <h1>Registro de Conducta </h1>
     <h3>Usuario:  <?php echo $_SESSION["username"] ?></h3>
 </div>
 <nav>
@@ -36,9 +36,10 @@ $secciones = $secciones->fetchAll();
         <li><a href="inicio.view.php">Inicio</a> </li>
         <li><a href="alumnos.view.php">Registro de Alumnos</a> </li>
         <li><a href="listadoalumnos.view.php">Listado de Alumnos</a> </li>
-        <li><a href="notas.view.php">Registro de Notas</a> </li>
-        <li class="active"><a href="listadonotas.view.php">Consulta de Notas</a> </li>
+        <li><a href="notas.view.php">Registro de Conducta</a> </li>
+        <li class="active"><a href="listadonotas.view.php">Consulta de Conducta</a> </li>
         <li><a href="condicionsalud.php">Condicion de Salud</a> </li>
+        <li><a href="tutores.php">Tutores</a> </li>
         <li class="right"><a href="logout.php">Salir</a> </li>
 
     </ul>
@@ -46,35 +47,29 @@ $secciones = $secciones->fetchAll();
 
 <div class="body">
     <div class="panel">
-        <h3>Consulta de Notas</h3>
+        <h3>Consulta de Conducta</h3>
         <?php
         if(!isset($_GET['consultar'])){
             ?>
-            <p>Seleccione el grado, la materia y la sección</p>
+            <p></p>
             <form method="get" class="form" action="listadonotas.view.php">
                 <label>Seleccione el Grado</label><br>
                 <select name="grado" required>
                     <?php foreach ($grados as $grado):?>
                         <option value="<?php echo $grado['id'] ?>"><?php echo $grado['nombre'] ?></option>
                     <?php endforeach;?>
-                </select>
-                <br><br>
-                <label>Seleccione la Materia</label><br>
-                <select name="materia" required>
-                    <?php foreach ($materias as $materia):?>
-                        <option value="<?php echo $materia['id'] ?>"><?php echo $materia['nombre'] ?></option>
-                    <?php endforeach;?>
+               
                 </select>
 
                 <br><br>
-                <label>Seleccione la Sección</label><br><br>
+                <label>Seleccione el grupo</label><br><br>
 
                 <?php foreach ($secciones as $seccion):?>
                     <input type="radio" name="seccion" required value="<?php echo $seccion['id'] ?>">Sección <?php echo $seccion['nombre'] ?>
                 <?php endforeach;?>
 
                 <br><br>
-                <button type="submit" name="consultar" value="1">Consultar Notas</button></a>
+                <button type="submit" name="consultar" value="1">Consultar Conducta</button></a>
                 <br><br>
             </form>
             <?php
@@ -96,7 +91,7 @@ $secciones = $secciones->fetchAll();
 
 
             //mostrando el cuadro de notas de todos los alumnos del grado seleccionado
-            $sqlalumnos = $conn->prepare("select a.id, a.num_lista, a.apellidos, a.nombres, b.nota,b.observaciones, avg(b.nota) as promedio from alumnos as a left join notas as b on a.id = b.id_alumno
+            $sqlalumnos = $conn->prepare("select a.id, a.fecha_nacimiento, a.apellidos, a.nombres, b.nota,b.observaciones, avg(b.nota) as promedio from alumnos as a left join notas as b on a.id = b.id_alumno
  where id_grado = ".$id_grado." and id_seccion = ".$id_seccion." group by a.id");
             $sqlalumnos->execute();
             $alumnos = $sqlalumnos->fetchAll();
@@ -124,7 +119,7 @@ $secciones = $secciones->fetchAll();
                     <?php foreach ($alumnos as $index => $alumno) :?>
                         <!-- campos ocultos necesarios para realizar el insert-->
                         <tr>
-                            <td align="center"><?php echo $alumno['num_lista'] ?></td><td><?php echo $alumno['apellidos'] ?></td>
+                            <td align="center"><?php echo $alumno['fecha_nacimiento'] ?></td><td><?php echo $alumno['apellidos'] ?></td>
                             <td><?php echo $alumno['nombres'] ?></td>
                             <?php
 

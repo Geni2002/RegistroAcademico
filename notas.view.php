@@ -22,14 +22,14 @@ $secciones = $secciones->fetchAll();
 ?>
 <html>
 <head>
-<title>Notas | Registro de Notas</title>
+<title>Notas | Registro de Conducta</title>
     <meta name="description" content="Registro de Notas del Centro Escolar Profesor Lennin" />
     <link rel="stylesheet" href="css/style.css" />
 
 </head>
 <body>
 <div class="header">
-        <h1>Registro de Notas - Centro Escolar</h1>
+        <h1>Registro de Notas</h1>
         <h3>Usuario:  <?php echo $_SESSION["username"] ?></h3>
 </div>
 <nav>
@@ -37,8 +37,10 @@ $secciones = $secciones->fetchAll();
         <li><a href="inicio.view.php">Inicio</a> </li>
         <li><a href="alumnos.view.php">Registro de Alumnos</a> </li>
         <li><a href="listadoalumnos.view.php">Listado de Alumnos</a> </li>
-        <li class="active"><a href="notas.view.php">Registro de Notas</a> </li>
-        <li><a href="listadonotas.view.php">Consulta de Notas</a> </li>
+        <li class="active"><a href="notas.view.php">Registro de Conducta</a> </li>
+        <li><a href="listadonotas.view.php">Consulta de Conducta</a> </li>
+        <li><a href="condicionsalud.php">Condicion de Salud</a> </li>
+        <li><a href="tutores.php">Tutores</a> </li>
         <li class="right"><a href="logout.php">Salir</a> </li>
 
     </ul>
@@ -46,7 +48,7 @@ $secciones = $secciones->fetchAll();
 
 <div class="body">
     <div class="panel">
-            <h3>Registro y Modificación Notas</h3>
+            <h3>Registro y Modificación Conducta</h3>
            <?php
            if(!isset($_GET['revisar'])){
                ?>
@@ -58,23 +60,24 @@ $secciones = $secciones->fetchAll();
                         <option value="<?php echo $grado['id'] ?>"><?php echo $grado['nombre'] ?></option>
                     <?php endforeach;?>
                 </select>
-                <br><br>
-                <label>Seleccione la Materia</label><br>
-                <select name="materia" required>
-                    <?php foreach ($materias as $materia):?>
-                        <option value="<?php echo $materia['id'] ?>"><?php echo $materia['nombre'] ?></option>
-                    <?php endforeach;?>
-                </select>
+               
 
                 <br><br>
-                <label>Seleccione la Sección</label><br>
+                <label>Seleccione el grupo</label><br>
 
                 <?php foreach ($secciones as $seccion):?>
                     <input type="radio" name="seccion" required value="<?php echo $seccion['id'] ?>">Sección <?php echo $seccion['nombre'] ?>
                 <?php endforeach;?>
+                <br><br>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">
+                        Condicion de salud</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
 
                 <br><br>
-                <button type="submit" name="revisar" value="1">Ingresar Notas</button> <a class="btn-link" href="listadonotas.view.php">Consultar Notas</a>
+                <button type="submit" name="revisar" value="1">Ingresar Notas</button> <a class="btn-link" href="listadonotas.view.php">Consultar Conducta</a>
                 <br><br>
             </form>
         <?php
@@ -111,7 +114,7 @@ $secciones = $secciones->fetchAll();
 
             <table class="table" cellpadding="0" cellspacing="0">
                 <tr>
-                    <th>No de lista</th><th>Apellidos</th><th>Nombres</th>
+                    <th>fecha de nacimiento</th><th>Apellidos</th><th>Nombres</th>
                     <?php
                         for($i = 1; $i <= $num_eval; $i++){
                            echo '<th>Nota '.$i .'</th>';
@@ -131,7 +134,7 @@ $secciones = $secciones->fetchAll();
                     <input type="hidden" value="<?php echo $id_grado ?>" name="id_grado">
                     <input type="hidden" value="<?php echo $id_seccion ?>" name="id_seccion">
                     <tr>
-                        <td align="center"><?php echo $alumno['num_lista'] ?></td><td><?php echo $alumno['apellidos'] ?></td>
+                        <td align="center"><?php echo $alumno['fecha_nacimiento'] ?></td><td><?php echo $alumno['apellidos'] ?></td>
                         <td><?php echo $alumno['nombres'] ?></td>
                         <?php
                            if(existeNota($alumno['id'],$id_materia,$conn) > 0){

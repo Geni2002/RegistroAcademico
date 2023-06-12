@@ -42,17 +42,14 @@ $grados = $grados->fetchAll();
 
 <div class="body">
     <div class="panel">
-            <h4>Condicion de Salud</h4>
+            <h4>Registro de Tutores</h4>
             <form method="post" class="form" action="procesaralumno.php">
-                <label>Nombres</label><br>
+                <label>Nombre del alumno</label><br>
                 <input type="text" required name="nombres" maxlength="45">
                 <br>
                 <label>Apellidos</label><br>
                 <input type="text" required name="apellidos" maxlength="45">
-                <br><br>
-                <label>Sexo</label><br><input required type="radio" name="genero" value="M"> Masculino
-                <input type="radio" name="genero" required value="F"> Femenino
-                <br><br>
+                <br>
                 <label>Grado</label><br>
                 <select name="grado" required>
                     <?php foreach ($grados as $grado):?>
@@ -61,18 +58,22 @@ $grados = $grados->fetchAll();
                 </select>
                 <br><br>
                 <label>Grupo</label><br>
-
-                    <?php foreach ($secciones as $seccion):?>
+                <?php foreach ($secciones as $seccion):?>
                         <input type="radio" name="seccion" required value="<?php echo $seccion['id'] ?>">Sección <?php echo $seccion['nombre'] ?>
                     <?php endforeach;?>
-                    <br><br>
 
-                    <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">
-                        Condicion de salud</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                                   
+                <br><br>
+                <label>Nombre del tutor</label><br>
+                <input type="text" required name="nombres" maxlength="45">
+                <br>
+                <label>Apellidos</label><br>
+                <input type="text" required name="apellidos" maxlength="45">
+                <br>
+                <label>Numero telefonico</label><br>
+                <input type="text" required name="numerotelefonico" maxlength="45">
+                <br><br>
+            
+
                 <br><br>
                 <button type="submit" name="insertar">Guardar</button> <button type="reset">Limpiar</button> <a class="btn-link" href="listadoalumnos.view.php">Ver Listado</a>
                 <br><br>

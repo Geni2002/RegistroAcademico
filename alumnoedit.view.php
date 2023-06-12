@@ -28,7 +28,7 @@ if(isset($_GET['id'])) {
 <html>
 <head>
 <title>Inicio | Registro de Notas</title>
-    <meta name="description" content="Registro de Notas del Centro Escolar Profesor Lennin" />
+    <meta name="description" content="Registro de Notas del Centro Escolar " />
     <link rel="stylesheet" href="css/style.css" />
 
 </head>
@@ -62,8 +62,8 @@ if(isset($_GET['id'])) {
                 <label>Apellidos</label><br>
                 <input type="text" required name="apellidos" value="<?php echo $alumno['apellidos']?>" maxlength="45">
                 <br><br>
-                <label>No de Lista</label><br>
-                <input type="number" min="1" class="number" value="<?php echo $alumno['num_lista']?>" name="numlista">
+                <label>Fecha de nacimiento</label><br>
+                <input type="number" min="1" class="number" value="<?php echo $alumno['fecha_nacimiento']?>" name="fechanacimiento">
                 <br><br>
                 <label>Sexo</label><br><input required type="radio" name="genero" <?php if($alumno['genero'] == 'M'){ echo "checked";} ?> value="M"> Masculino
                 <input type="radio" name="genero" required value="F" <?php if($alumno['genero'] == 'F') { echo "checked";} ?>> Femenino

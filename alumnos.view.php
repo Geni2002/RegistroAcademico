@@ -23,7 +23,7 @@ $grados = $grados->fetchAll();
 </head>
 <body>
 <div class="header">
-        <h1>Registro de Notas - Centro Escolar </h1>
+        <h1>Registro de Notas  </h1>
         <h3>Usuario:  <?php echo $_SESSION["username"] ?></h3>
 </div>
 <nav>
@@ -31,9 +31,10 @@ $grados = $grados->fetchAll();
         <li><a href="inicio.view.php">Inicio</a> </li>
         <li class="active"><a href="alumnos.view.php">Registro de Alumnos</a> </li>
         <li><a href="listadoalumnos.view.php">Listado de Alumnos</a> </li>
-        <li><a href="notas.view.php">Registro de Notas</a> </li>
-        <li><a href="listadonotas.view.php">Consulta de Notas</a> </li>
+        <li><a href="notas.view.php">Registro de Conducta</a> </li>
+        <li><a href="listadonotas.view.php">Consulta de Conducta</a> </li>
         <li><a href="condicionsalud.php">Condicion de Salud</a> </li>
+        <li><a href="tutores.php">Tutores</a> </li>
         <li class="right"><a href="logout.php">Salir</a> </li>
 
     </ul>
@@ -49,8 +50,8 @@ $grados = $grados->fetchAll();
                 <label>Apellidos</label><br>
                 <input type="text" required name="apellidos" maxlength="45">
                 <br><br>
-                <label>No de lista</label><br>
-                <input type="number" min="1" class="number" name="numlista">
+                <label>Fecha de nacimiento</label><br>
+                <input type="number" min="1" class="number" name="fechanacimiento">
                 <br><br>
                 <label>Sexo</label><br><input required type="radio" name="genero" value="M"> Masculino
                 <input type="radio" name="genero" required value="F"> Femenino

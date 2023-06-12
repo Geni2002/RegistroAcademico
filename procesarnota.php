@@ -49,7 +49,7 @@ else {
     }else if (isset($_POST['modificar'])) {
         //capturamos el id alumnos a modificar
             $id_alumno = htmlentities($_POST['id']);
-            $result = $conn->query("update alumnos set num_lista = '$numlista', nombres = '$nombres', apellidos = '$apellidos', genero = '$genero',id_grado = '$idgrado', id_seccion = '$idseccion' where id = " . $id_alumno);
+            $result = $conn->query("update alumnos set fecha_nacimiento = '$numlista', nombres = '$nombres', apellidos = '$apellidos', genero = '$genero',id_grado = '$idgrado', id_seccion = '$idseccion' where id = " . $id_alumno);
             if (isset($result)) {
                 header('location:alumnoedit.view.php?id=' . $id_alumno . '&info=1');
             } else {
