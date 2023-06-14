@@ -34,7 +34,7 @@ if(isset($_GET['id'])) {
 </head>
 <body>
 <div class="header">
-        <h1>Registro de Notas - Centro Escolar "Profe Lennin"</h1>
+        <h1>Registro de Notas</h1>
         <h3>Usuario:  <?php echo $_SESSION["username"] ?></h3>
 </div>
 <nav>
@@ -75,12 +75,12 @@ if(isset($_GET['id'])) {
                     <?php endforeach;?>
                 </select>
                 <br><br>
-                <label>Seccion</label><br>
-
+                <label>Grupo</label><br>
+                <select name="grupo" required>
                     <?php foreach ($secciones as $seccion):?>
-                        <input type="radio" name="seccion" <?php if($alumno['id_seccion'] == $seccion['id']) { echo "checked";} ?> required value="<?php echo $seccion['id'] ?>">Seccion <?php echo $seccion['nombre'] ?>
+                        <option value="<?php echo $seccion['id'] ?>" <?php if($alumno['id_seccion'] == $grado['id']) { echo "selected";} ?> ><?php echo $seccion['nombre'] ?></option>
                     <?php endforeach;?>
-
+                    </select>
                 <br><br>
                 <button type="submit" name="modificar">Guardar Cambios</button> <a class="btn-link" href="listadoalumnos.view.php">Ver Listado</a>
                 <br><br>

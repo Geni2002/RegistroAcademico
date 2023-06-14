@@ -58,10 +58,11 @@ $grados = $grados->fetchAll();
                 </select>
                 <br><br>
                 <label>Grupo</label><br>
-                <?php foreach ($secciones as $seccion):?>
-                        <input type="radio" name="seccion" required value="<?php echo $seccion['id'] ?>">Sección <?php echo $seccion['nombre'] ?>
+                <select name="grupo" required>
+                    <?php foreach ($secciones as $seccion):?>
+                        <option value="<?php echo $seccion['id'] ?>"><?php echo $seccion['nombre'] ?></option>
                     <?php endforeach;?>
-
+                    </select>
                 <br><br>
                 <label>Nombre del tutor</label><br>
                 <input type="text" required name="nombres" maxlength="45">

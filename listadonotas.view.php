@@ -62,11 +62,13 @@ $secciones = $secciones->fetchAll();
                 </select>
 
                 <br><br>
-                <label>Seleccione el grupo</label><br><br>
+                <label>Grupo</label><br>
+                <select name="grupo" required>
+                    <?php foreach ($secciones as $seccion):?>
+                        <option value="<?php echo $seccion['id'] ?>"><?php echo $seccion['nombre'] ?></option>
+                    <?php endforeach;?>
 
-                <?php foreach ($secciones as $seccion):?>
-                    <input type="radio" name="seccion" required value="<?php echo $seccion['id'] ?>">Sección <?php echo $seccion['nombre'] ?>
-                <?php endforeach;?>
+                    </select>
 
                 <br><br>
                 <button type="submit" name="consultar" value="1">Consultar Conducta</button></a>
@@ -79,7 +81,7 @@ $secciones = $secciones->fetchAll();
 
         <?php
         if(isset($_GET['consultar'])){
-            $id_materia = $_GET['materia'];
+            $id_materia = $_GET['conducta'];
             $id_grado = $_GET['grado'];
             $id_seccion = $_GET['seccion'];
 
@@ -103,7 +105,7 @@ $secciones = $secciones->fetchAll();
             <a href="listadonotas.view.php"><strong><< Volver</strong></a>
             <br>
             <br>
-
+            
 
                 <table class="table" cellpadding="0" cellspacing="0">
                     <tr>

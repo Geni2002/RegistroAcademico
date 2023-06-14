@@ -61,11 +61,13 @@ $grados = $grados->fetchAll();
                 </select>
                 <br><br>
                 <label>Grupo</label><br>
-
+                <select name="grupo" required>
                     <?php foreach ($secciones as $seccion):?>
-                        <input type="radio" name="seccion" required value="<?php echo $seccion['id'] ?>">Sección <?php echo $seccion['nombre'] ?>
+                        <option value="<?php echo $seccion['id'] ?>"><?php echo $seccion['nombre'] ?></option>
                     <?php endforeach;?>
-                    <br><br>
+                    </select>
+                    
+                <br><br>
 
                     <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">
