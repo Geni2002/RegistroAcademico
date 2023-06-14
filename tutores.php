@@ -73,6 +73,10 @@ $grados = $grados->fetchAll();
                 <label>Numero telefonico</label><br>
                 <input type="text" required name="numerotelefonico" maxlength="45">
                 <br><br>
+                <label>Domicilio</label><br>
+                <input type="text" required name="apellidos" maxlength="45">
+                <br>
+
             
 
                 <br><br>

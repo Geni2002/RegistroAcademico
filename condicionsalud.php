@@ -71,8 +71,10 @@ $grados = $grados->fetchAll();
 
                     <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">
-                        Condicion de salud</label>
+                        Condicion de salud<br><br>
+                </select></label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    
                     </div>
                                    
                 <br><br>
