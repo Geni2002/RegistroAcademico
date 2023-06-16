@@ -12,7 +12,7 @@ $alumnos = $alumnos->fetchAll();
 <html>
 <head>
 <title>Listado de Alumnos | Registro de Notas</title>
-    <meta name="description" content="Registro de Notas del Centro Escolar Profesor Lennin" />
+    <meta name="description" content="Registro de Notas " />
     <link rel="stylesheet" href="css/style.css" />
 
 </head>
