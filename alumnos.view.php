@@ -51,7 +51,7 @@ $grados = $grados->fetchAll();
                 <input type="text" required name="apellidos" maxlength="45">
                 <br><br>
                 <label>Fecha de nacimiento</label><br>
-                <input type="number" min="1" class="number" name="fecha_nacimiento">
+                <input type="date"  name="fechanacimiento">
                 <br><br>
                 <label>Sexo</label><br><input required type="radio" name="genero" value="M"> Masculino
                 <input type="radio" name="genero" required value="F"> Femenino

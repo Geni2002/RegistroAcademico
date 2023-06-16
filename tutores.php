@@ -42,13 +42,13 @@ $grados = $grados->fetchAll();
 
 <div class="body">
     <div class="panel">
-            <h4>Registro de Tutores</h4>
-            <form method="post" class="form" action="procesaralumno.php">
+            <h4>Registro de Alumno</h4>
+            <form method="post" class="form" action="procesartutor.php">
                 <label>Nombre del alumno</label><br>
-                <input type="text" required name="nombres" maxlength="45">
+                <input type="text" required name="nombre_alumno" maxlength="45">
                 <br>
                 <label>Apellidos</label><br>
-                <input type="text" required name="apellidos" maxlength="45">
+                <input type="text" required name="apellidos_alumno" maxlength="45">
                 <br>
                 <label>Grado</label><br>
                 <select name="grado" required>
@@ -64,11 +64,12 @@ $grados = $grados->fetchAll();
                     <?php endforeach;?>
                     </select>
                 <br><br>
+                <h4>Registro de Tutores</h4>
                 <label>Nombre del tutor</label><br>
-                <input type="text" required name="nombres" maxlength="45">
+                <input type="text" required name="nombres_tutor" maxlength="45">
                 <br>
                 <label>Apellidos</label><br>
-                <input type="text" required name="apellidos" maxlength="45">
+                <input type="text" required name="apellidos_tutor" maxlength="45">
                 <br>
                 <label>Numero telefonico</label><br>
                 <input type="text" required name="numerotelefonico" maxlength="45">

@@ -63,7 +63,8 @@ if(isset($_GET['id'])) {
                 <input type="text" required name="apellidos" value="<?php echo $alumno['apellidos']?>" maxlength="45">
                 <br><br>
                 <label>Fecha de nacimiento</label><br>
-                <input type="number" min="1" class="number" value="<?php echo $alumno['fecha_nacimiento']?>" name="fechanacimiento">
+                <input type="date"  name="fechanacimiento">
+
                 <br><br>
                 <label>Sexo</label><br><input required type="radio" name="genero" <?php if($alumno['genero'] == 'M'){ echo "checked";} ?> value="M"> Masculino
                 <input type="radio" name="genero" required value="F" <?php if($alumno['genero'] == 'F') { echo "checked";} ?>> Femenino
