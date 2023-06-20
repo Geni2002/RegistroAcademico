@@ -9,7 +9,7 @@ else {
     $nombres = htmlentities($_POST ['nombres']);
     $apellidos = htmlentities($_POST ['apellidos']);
     $genero = htmlentities($_POST['genero']);
-    $fechanacimiento = htmlentities($_POST['fechanacimiento']);
+    $fechanacimiento = htmlentities($_POST['fecha_nacimiento']);
     $idgrado = htmlentities($_POST['grado']);
     $idseccion = htmlentities($_POST['grupo']);
 

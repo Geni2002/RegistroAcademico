@@ -35,6 +35,7 @@ $grados = $grados->fetchAll();
         <li><a href="listadonotas.view.php">Consulta de Conducta</a> </li>
         <li><a href="condicionsalud.php">Condicion de Salud</a> </li>
         <li><a href="tutores.php">Tutores</a> </li>
+        
         <li class="right"><a href="logout.php">Salir</a> </li>
 
     </ul>
@@ -47,23 +48,6 @@ $grados = $grados->fetchAll();
                 <label>Nombre del alumno</label><br>
                 <input type="text" required name="nombre_alumno" maxlength="45">
                 <br>
-                <label>Apellidos</label><br>
-                <input type="text" required name="apellidos_alumno" maxlength="45">
-                <br>
-                <label>Grado</label><br>
-                <select name="grado" required>
-                    <?php foreach ($grados as $grado):?>
-                        <option value="<?php echo $grado['id'] ?>"><?php echo $grado['nombre'] ?></option>
-                    <?php endforeach;?>
-                </select>
-                <br><br>
-                <label>Grupo</label><br>
-                <select name="grupo" required>
-                    <?php foreach ($secciones as $seccion):?>
-                        <option value="<?php echo $seccion['id'] ?>"><?php echo $seccion['nombre'] ?></option>
-                    <?php endforeach;?>
-                    </select>
-                <br><br>
                 <h4>Registro de Tutores</h4>
                 <label>Nombre del tutor</label><br>
                 <input type="text" required name="nombres_tutor" maxlength="45">
@@ -75,7 +59,7 @@ $grados = $grados->fetchAll();
                 <input type="text" required name="numerotelefonico" maxlength="45">
                 <br><br>
                 <label>Domicilio</label><br>
-                <input type="text" required name="apellidos" maxlength="45">
+                <input type="text" required name="Domicilio" maxlength="45">
                 <br>
 
             

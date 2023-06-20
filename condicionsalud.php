@@ -35,6 +35,7 @@ $grados = $grados->fetchAll();
         <li><a href="listadonotas.view.php">Consulta de Conducta</a> </li>
         <li><a href="condicionsalud.php">Condicion de Salud</a> </li>
         <li><a href="tutores.php">Tutores</a> </li>
+       
         <li class="right"><a href="logout.php">Salir</a> </li>
 
     </ul>

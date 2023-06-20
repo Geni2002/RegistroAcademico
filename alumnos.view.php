@@ -35,6 +35,7 @@ $grados = $grados->fetchAll();
         <li><a href="listadonotas.view.php">Consulta de Conducta</a> </li>
         <li><a href="condicionsalud.php">Condicion de Salud</a> </li>
         <li><a href="tutores.php">Tutores</a> </li>
+        
         <li class="right"><a href="logout.php">Salir</a> </li>
 
     </ul>
@@ -51,7 +52,7 @@ $grados = $grados->fetchAll();
                 <input type="text" required name="apellidos" maxlength="45">
                 <br><br>
                 <label>Fecha de nacimiento</label><br>
-                <input type="date"  name="fechanacimiento">
+                <input type="date"  name="fecha_nacimiento">
                 <br><br>
                 <label>Sexo</label><br><input required type="radio" name="genero" value="M"> Masculino
                 <input type="radio" name="genero" required value="F"> Femenino
